@@ -23,4 +23,4 @@ app.use(express.static('assets'));
  
 app.use('/assets', express.static(__dirname + '/assets'));
  
-app.listen(port, () => debug('Listening to port 3000'));
+app.listen(port, () => debug('Listening to port ' + port));
