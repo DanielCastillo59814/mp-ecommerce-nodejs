@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const debug = require('debug')('app');
  
 const app = express();
+const port = process.env.PORT || 3000;
 
 app.use(morgan('tiny'));
  
@@ -22,4 +23,4 @@ app.use(express.static('assets'));
  
 app.use('/assets', express.static(__dirname + '/assets'));
  
-app.listen(3000, () => debug('Listening to port 3000'));
+app.listen(port, () => debug('Listening to port 3000'));
