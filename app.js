@@ -1,7 +1,11 @@
-var express = require('express');
-var exphbs  = require('express-handlebars');
+const express = require('express');
+const exphbs  = require('express-handlebars');
+const morgan = require('morgan');
+const debug = require('debug')('app');
  
-var app = express();
+const app = express();
+
+app.use(morgan('tiny'));
  
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
@@ -18,4 +22,4 @@ app.use(express.static('assets'));
  
 app.use('/assets', express.static(__dirname + '/assets'));
  
-app.listen(3000, () => console.log('Listening to port 3000'));
+app.listen(3000, () => debug('Listening to port 3000'));
