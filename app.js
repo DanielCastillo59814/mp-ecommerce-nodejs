@@ -2,7 +2,9 @@ const express = require('express');
 const exphbs  = require('express-handlebars');
 const morgan = require('morgan');
 const debug = require('debug')('app');
-require('dotenv').config();
+if (process.env.NODE_ENV === 'dev') {
+    require('dotenv').config();
+}
 const mercadopago = require('mercadopago');
 
 mercadopago.configure({
