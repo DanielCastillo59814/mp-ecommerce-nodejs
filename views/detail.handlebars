@@ -17,7 +17,6 @@
         </div>
     </div>
     <div class="as-search-results as-filter-open as-category-landing as-desktop" id="as-search-results">
-
         <div id="accessories-tab" class="as-accessories-details">
             <div class="as-accessories" id="as-accessories">
                 <div class="as-accessories-header">
@@ -86,8 +85,11 @@
                             </div>
                             <form action="/" method="POST">
                                 <script
-                                src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js"
-                                data-preference-id="{{ id }}">
+                                    src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js"
+                                    data-preference-id="{{ id }}"
+                                    data-button-label="Pagar la compra"
+                                    data-elements-color="#2D3277"
+                                    data-button-color="#2D3277">
                                 </script>
                             </form>
                         </div>
