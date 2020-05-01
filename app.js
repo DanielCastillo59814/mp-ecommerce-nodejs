@@ -84,6 +84,10 @@ app.post('/', function (req, res){
     */
     res.redirect(req.body.back_url);
 });
+app.post('/notifications', function(req,res) {
+    console.log(req.body);
+    res.status(201);
+});
 
 app.get('/detail', async (req, res) => {
     try {
@@ -126,6 +130,7 @@ app.get('/detail', async (req, res) => {
                 pending: req.protocol + '://' + req.get('host') + '/?pending=true',
                 failure: req.protocol + '://' + req.get('host') + '/?failure=true',
             },
+            notification_url: 'http://danielcast-mp-ecommerce-nodejs.herokuapp.com/notifications',
             auto_return: 'approved',
             external_reference: 'ABCD1234'
         };
